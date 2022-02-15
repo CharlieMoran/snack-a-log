@@ -43,7 +43,18 @@ const getSnack = async (id) => {
     }
   };
   
-
+  const updateSnack = async (id, snack) => {
+    try {
+      let { name, fiber, protein, added_sugar, is_healthy, image } = snack;
+      let snackUpdated = await db.one(
+        "UPDATE snacks SET name=$2, fiber=$3, protein=$4, added_sugar=$5, is_healthy=$6, image=$7 WHERE id=$1 RETURNING *",
+        [name, fiber, protein, added_sugar, is_healthy, image]
+      );
+      return snackUpdated;
+    } catch (error) {
+      return error;
+    }
+  };
   
 
 
@@ -52,4 +63,5 @@ module.exports = {
   getSnack,
   createSnack,
   deleteSnack,
+  updateSnack,
 };
