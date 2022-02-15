@@ -1,13 +1,15 @@
-// DEPENDENCIES
-
 const express = require("express");
-
-// CONFIGURATION
+const cors = require('cors');
+const PORT = process.env.PORT || 6969
 const app = express();
+const snacksController = require('./controllers/snackController')
 
-// MIDDLEWARE
+app.use(cors());
 
-// ROUTES
+app.get('/', (req, res) => {
+    res.status(200).send('Welcome to our Snack database!')
+});
 
-// EXPORT
+app.use('/snacks', snacksController)
+
 module.exports = app;

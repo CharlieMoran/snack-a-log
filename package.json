@@ -20,6 +20,10 @@
   "homepage": "https://github.com/joinpursuit/bookmarks-mono-repo#readme",
   "dependencies": {
     "axios": "^0.26.0",
+<<<<<<< HEAD
     "express": "^4.17.2"
+=======
+    "cors": "^2.8.5"
+>>>>>>> 70fbb98b9e4bad2231bb49424d0f208f124cf8a8
   }
 }
