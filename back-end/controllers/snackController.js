@@ -8,4 +8,13 @@ snacks.get('/', async (req, res) => {
     res.status(200).json(snacks)
 });
 
+snacks.get("/", async (req, res) => {
+    let getTheSnacks = await getSnacksAll();
+    if (getTheSnacks[0]) {
+      res.status(200).json(getSnacksAll);
+    } else {
+      res.status(500).json({ error: "server error" });
+    }
+  });
+
 module.exports = snacks;
