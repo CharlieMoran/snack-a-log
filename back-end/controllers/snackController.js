@@ -22,5 +22,15 @@ snacks.get("/", async (req, res) => {
     response.status(200).json(snacksNew);
 })
 
-
+snacks.get('/:index', async (request, response) => { 
+    let {index} = request.params; 
+    let snacky = await getSnack(index);
+    response.status(200).json(snacky);
+  })
+  snacks.delete('/:id', async (request, response) => {
+  let {id} = request.params;
+  let snackity = await deleteSnack(id);
+  response.status(200).json(snackity);    
+  })
+  
 module.exports = snacks;
