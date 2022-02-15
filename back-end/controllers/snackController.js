@@ -17,4 +17,10 @@ snacks.get("/", async (req, res) => {
     }
   });
 
+  snacks.post('/', async (request, response) => {
+    let snacksNew = await createSnack(request.body);
+    response.status(200).json(snacksNew);
+})
+
+
 module.exports = snacks;
