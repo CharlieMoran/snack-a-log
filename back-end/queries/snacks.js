@@ -9,8 +9,20 @@ const getSnacksAll = async () => {
   }
 };
 
+const getSnack = async (id) => {
+    try {
+      let snack = await db.one("SELECT * FROM snacks WHERE id=$1", id);
+      return snack;
+    } catch (error) {
+      return error;
+    }
+  };
+  
+  
+
 
 
 module.exports = {
   getSnacksAll,
+  getSnack,
 };
