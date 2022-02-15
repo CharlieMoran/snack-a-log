@@ -31,6 +31,19 @@ const getSnack = async (id) => {
     }
   };
   
+  const deleteSnack = async (id) => {
+    try {
+      let snackDeleted = await db.one(
+        "DELETE FROM snacks WHERE id=$1 RETURNING *",
+        id
+      );
+      return snackDeleted;
+    } catch (error) {
+      return error;
+    }
+  };
+  
+
   
 
 
@@ -38,4 +51,5 @@ module.exports = {
   getSnacksAll,
   getSnack,
   createSnack,
+  deleteSnack,
 };
