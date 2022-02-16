@@ -34,19 +34,20 @@ const Form = (isEdit = false) => {
   };
 
   /* put request & post request */
-  let handleSubmit = (evt) => {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
     if (isEdit.isEdit) {
       axios
         .put(`${URL}/snacks/${id}`, snack)
         .then(() => {
-          navi(`/${id}`);
+          navi(`/snacks`);
         })
         .catch((error) => console.warn(error));
     } else {
       axios
         .post(`${URL}/snacks/`, snack)
         .then(() => {
-          navi("/");
+          navi("/snacks");
         })
         .catch((error) => console.warn(error));
     }
