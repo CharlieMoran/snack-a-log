@@ -20,8 +20,6 @@ const Form = (isEdit = false) => {
       axios.get(`${URL}/snacks/${id}`).then((response) => {
         setSnack(response.data.payload);
       });
-    } else {
-      setSnack({...snack});
     }
   }, [URL, id, isEdit, snack]);
 
@@ -54,8 +52,9 @@ const Form = (isEdit = false) => {
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
-      <label for="name">Name:</label>
+      <label htmlFor="name">Name:</label>
       <input
         required
         id="name"
@@ -65,7 +64,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="name"
       />
-      <label for="fiber">Fiber:</label>
+      <label htmlFor="fiber">Fiber:</label>
       <input
         id="fiber"
         name="fiber"
@@ -74,7 +73,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="fiber"
       />
-      <label for="protein">Protein:</label>
+      <label htmlFor="protein">Protein:</label>
       <input
         id="protein"
         name="protein"
@@ -83,7 +82,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="protein"
       />
-      <label for="added_sugar">Added Sugars:</label>
+      <label htmlFor="added_sugar">Added Sugars:</label>
       <input
         id="added_sugar"
         name="added_sugar"
@@ -92,7 +91,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="added_sugar"
       />
-      <label for="is_healthy">Is it Healthy:</label>
+      <label htmlFor="is_healthy">Is it Healthy:</label>
       <input
         id="is_healthy"
         name="is_healthy"
@@ -101,7 +100,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="is_healthy"
       />
-      <label for="image">Image:</label>
+      <label htmlFor="image">Image:</label>
       <input
         id="image"
         name="image"
@@ -112,6 +111,7 @@ const Form = (isEdit = false) => {
       />
       <button handleSubmit={handleSubmit}>Submit</button>
     </form>
+    </>
   );
 };
 
