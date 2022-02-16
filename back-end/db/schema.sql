@@ -5,9 +5,10 @@ CREATE DATABASE snack_a_log;
 
 CREATE TABLE snacks (
     id SERIAL PRIMARY KEY, 
-    name TEXT, 
+    name TEXT,
+    image TEXT, 
     fiber INTEGER, 
     protein INTEGER, 
     added_sugar INTEGER, 
-    is_healthy BOOLEAN Default false, 
-    image TEXT);
+    is_healthy BOOLEAN Default false 
+    );
