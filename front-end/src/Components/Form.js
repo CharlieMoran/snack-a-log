@@ -62,7 +62,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="name"
       />
-      <label for="fiber">Protein:</label>
+      <label for="fiber">Fiber:</label>
       <input
         id="fiber"
         name="fiber"
