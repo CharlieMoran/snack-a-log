@@ -16,24 +16,26 @@ const Form = (isEdit = false) => {
     image: "",
   });
   useEffect(() => {
-    if (isEdit) {
+    if (isEdit.isEdit) {
       axios.get(`${URL}/snacks/${id}`).then((response) => {
-        setSnack(response.data);
+        setSnack(response.data.payload);
       });
-    }
-  }, [URL, id]);
-
-  let handleChange = (event) => {
-    if (event.target.id === "is_healthy") {
-      setSnack({ ...snack, is_healthy: !snack.is_healthy });
     } else {
-      setSnack({ ...snack, [event.target.id]: event.target.value });
+      setSnack({...snack});
+    }
+  }, [URL, id, isEdit, snack]);
+
+  let handleChange = (evt) => {
+    if (evt.target.id === "is_healthy") {
+      setSnack({...snack, is_healthy: !snack.is_healthy});
+    } else {
+      setSnack({...snack, [evt.target.id]: evt.target.value});
     }
   };
 
   /* put request & post request */
-  let handleSubmit = (event) => {
-    if (isEdit) {
+  let handleSubmit = (evt) => {
+    if (isEdit.isEdit) {
       axios
         .put(`${URL}/snacks/${id}`, snack)
         .then(() => {
@@ -100,6 +102,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="image"
       />
+      <button handleSubmit={handleSubmit}>Submit</button>
     </form>
   );
 };
