@@ -56,8 +56,10 @@ const Form = (isEdit = false) => {
     <form onSubmit={handleSubmit}>
       <label for="name">Name:</label>
       <input
+        required
         id="name"
         name="name"
+        type="text"
         value={snack.name}
         onChange={handleChange}
         placeholder="name"
@@ -66,6 +68,7 @@ const Form = (isEdit = false) => {
       <input
         id="fiber"
         name="fiber"
+        type="number"
         value={snack.fiber}
         onChange={handleChange}
         placeholder="fiber"
@@ -74,6 +77,7 @@ const Form = (isEdit = false) => {
       <input
         id="protein"
         name="protein"
+        type="number"
         value={snack.protein}
         onChange={handleChange}
         placeholder="protein"
@@ -82,6 +86,7 @@ const Form = (isEdit = false) => {
       <input
         id="added_sugar"
         name="added_sugar"
+        type="number"
         value={snack.added_sugar}
         onChange={handleChange}
         placeholder="added_sugar"
@@ -90,6 +95,7 @@ const Form = (isEdit = false) => {
       <input
         id="is_healthy"
         name="is_healthy"
+        type="checkbox"
         value={snack.is_healthy}
         onChange={handleChange}
         placeholder="is_healthy"
@@ -98,6 +104,7 @@ const Form = (isEdit = false) => {
       <input
         id="image"
         name="image"
+        type="text"
         value={snack.image}
         onChange={handleChange}
         placeholder="image"
