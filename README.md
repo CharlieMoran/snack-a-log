@@ -86,3 +86,6 @@ Often, interviewers are less interested in the technical aspects of group projec
 
 - [Back-end README](./README_BE.md)
 - [Front-end README](./README_FE.md)
+
+[Back-End Deployed](https://snack-a-log-be-calm.herokuapp.com/)
+[Front-End Deployed](https://charlie-moran-snack-a-log.netlify.app/)
